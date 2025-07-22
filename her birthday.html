@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Happy Birthday, [Her Name]!</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Pacifico&display=swap');
+    body {
+      background: linear-gradient(120deg, #ffdde1, #f9c6d3 100%);
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      color: #32243a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: rgba(255,255,255,0.96);
+      border-radius: 28px;
+      box-shadow: 0 16px 32px 0 rgba(255,115,172,0.15), 0 1.5px 16px 0 #fff4fa;
+      padding: 48px 32px 32px 32px;
+      max-width: 420px;
+      width: 90vw;
+      margin: 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    h1 {
+      font-size: 2.25em;
+      margin-bottom: 0.55em;
+      color: #ed6ea0;
+      letter-spacing: 2px;
+      animation: popUp 0.7s both;
+      text-shadow: 0 2px 16px #d96dae, 0 1px 8px #f5576c55;
+    }
+    .heart {
+      display: inline-block;
+      color: #ed6ea0;
+      font-size: 2.1em;
+      animation: heartbeat 1.2s infinite;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 1px 6px #ffeff3);
+      opacity: 0.85;
+    }
+    .big-love {
+      font-size: 1.13em;
+      font-weight: 900;
+      background: linear-gradient(90deg, #ed6ea0 50%, #ffc1c1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 12px 0 24px 0;
+      animation: fadeIn 1.1s 0.5s both;
+    }
+    .message {
+      font-size: 1.07em;
+      margin-bottom: 17px;
+      padding: 6px 0;
+      opacity: 0;
+      animation: fadeInMsg 2s 0.8s forwards;
+      color: #3f2040;
+    }
+    .signature {
+      font-family: 'Pacifico', cursive, Arial, sans-serif;
+      font-size: 1.08em;
+      color: #ad4a71;
+      margin-top: 16px;
+      opacity: 0.80;
+    }
+    .hint {
+      opacity: 0.04;
+      font-size: 1em;
+      font-family: 'Pacifico', cursive;
+      position: absolute;
+      left: 14px;
+      bottom: 12px;
+      letter-spacing: 0.5em;
+      pointer-events: none;
+      user-select: none;
+    }
+    .iloveyou {
+      font-size: 1.08em;
+      color: #e05989;
+      font-weight: bold;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeInILY 2.2s 2s forwards;
+      font-family: 'Pacifico', cursive, Arial, sans-serif;
+      letter-spacing: 0.04em;
+    }
+    .confetti {
+      position: absolute;
+      left: 50%;
+      top: 0;
+      width: 200px;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      transform: translateX(-50%);
+    }
+    .confetti span {
+      position: absolute;
+      font-size: 1.2em;
+      opacity: 0.57;
+      animation: float 4s linear infinite;
+    }
+    @keyframes heartbeat {
+      0%, 20%, 40%, 60%, 100% { transform: scale(1);}
+      10%, 30%, 50% { transform: scale(1.16);}
+    }
+    @keyframes popUp {
+      0% { transform: scale(0.45); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(12px);}
+      to   { opacity: 1; transform: translateY(0);}
+    }
+    @keyframes fadeInMsg {
+      from { opacity: 0; transform:translateY(18px);}
+      to   { opacity: 1; transform:translateY(0);}
+    }
+    @keyframes fadeInILY {
+      from { opacity: 0; transform:translateY(22px);}
+      to   { opacity: 1; transform:translateY(0);}
+    }
+    @keyframes float {
+      0%   { transform: translateY(-20px) scale(1);}
+      100% { transform: translateY(430px) scale(1.6);}
+    }
+    @media (max-width: 600px) {
+      .card { max-width: 97vw; padding: 12vw 2vw 10vw 2vw; }
+      h1 { font-size: 1.35em; }
+      .heart { font-size: 1.3em; }
+      .big-love, .iloveyou { font-size: 0.98em; }
+      .message, .signature { font-size: 0.97em; }
+    }
+  </style>
+  <link href="https://fonts.googleapis.com/css?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="card">
+    <div class="confetti" id="confetti"></div>
+    <div class="heart">💖</div>
+    <h1>Happy Birthday, Aabha!</h1>
+    <div class="big-love">You're truly one of a kind.</div>
+    <div class="message">
+      May your day be as wonderful, bright, and loved as you make the world for those around you.<br>
+      Wishing you endless smiles, adventure, and pure happiness—all the things you deserve.<br>
+      <span style="font-size:.97em; color:#c479b1;">P.S. Thank you for being you—always.</span>
+    </div>
+    <div class="signature">
+      — Sanyam 
+    </div>
+    <div class="hint">
+      ∞
+    </div>
+    <div class="iloveyou">
+      I love you, aabha!
+    </div>
+  </div>
+  <script>
+    // Confetti animation (centered)
+    const icons = ['💛','💜','💙','💚','💕','⭐','🌈','🥰','💌'];
+    const confettiEl = document.getElementById('confetti');
+    function createPiece() {
+      const el = document.createElement('span');
+      el.textContent = icons[Math.floor(Math.random()*icons.length)];
+      el.style.left = (Math.random()*96) + '%';
+      el.style.fontSize = (1 + Math.random()*1.3) + 'em';
+      el.style.animationDuration = (3.6 + Math.random()*2) + 's';
+      el.style.opacity = 0.5 + 0.4*Math.random();
+      confettiEl.appendChild(el);
+      setTimeout(() => {
+        confettiEl.removeChild(el);
+      }, 4700);
+    }
+    setInterval(createPiece, 227);
+  </script>
+</body>
+</html>
